@@ -44,9 +44,6 @@
             width: 100%;
             z-index: 100;
             padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             transition: all 0.4s ease;
         }
 
@@ -55,6 +52,14 @@
             backdrop-filter: blur(10px);
             padding: 0.7rem 2rem;
             box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-inner {
+            max-width: 1024px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .nav-logo {
@@ -159,8 +164,10 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 900px;
-            padding: 2rem 4rem;
+            max-width: 1024px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem;
         }
 
         .hero-badge {
@@ -301,6 +308,9 @@
         .section-header {
             text-align: center;
             margin-bottom: 4rem;
+            max-width: 1024px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section-label {
@@ -331,7 +341,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            max-width: 1100px;
+            max-width: 1024px;
             margin: 0 auto;
         }
 
@@ -417,7 +427,7 @@
         }
 
         .over-grid {
-            max-width: 1100px;
+            max-width: 1024px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -534,7 +544,7 @@
         }
 
         .contact-wrapper {
-            max-width: 900px;
+            max-width: 1024px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -666,7 +676,12 @@
         /* ============ FOOTER ============ */
         footer {
             background: var(--oak);
-            padding: 2.5rem 4rem;
+            padding: 2.5rem 2rem;
+        }
+
+        .footer-inner {
+            max-width: 1024px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -739,6 +754,9 @@
 
             footer {
                 padding: 2rem;
+            }
+
+            .footer-inner {
                 flex-direction: column;
                 text-align: center;
             }
@@ -789,15 +807,17 @@
 
     <!-- NAV -->
     <nav id="navbar">
-        <a href="#" class="nav-logo">P. Boom <span>Aannemers</span></a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#diensten">Diensten</a></li>
-            <li><a href="#over">Over ons</a></li>
-            <li><a href="#werkgebied">Werkgebied</a></li>
-            <li><a href="#contact" class="nav-cta">Contact</a></li>
-        </ul>
-        <div class="mobile-toggle" id="mobileToggle" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">P. Boom <span>Aannemers</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#diensten">Diensten</a></li>
+                <li><a href="#over">Over ons</a></li>
+                <li><a href="#werkgebied">Werkgebied</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
         </div>
     </nav>
 
@@ -1040,8 +1060,10 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="footer-brand">P. Boom <span>Aannemers</span></div>
-        <div class="footer-copy">&copy; 2026 Aannemersbedrijf P. Boom — Noordwijk</div>
+        <div class="footer-inner">
+            <div class="footer-brand">P. Boom <span>Aannemers</span></div>
+            <div class="footer-copy">&copy; 2026 Aannemersbedrijf P. Boom — Noordwijk</div>
+        </div>
     </footer>
 
     <script>
