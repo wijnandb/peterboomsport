@@ -59,45 +59,37 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 1rem 4vw;
+            padding: 1.5rem 4vw;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(47, 56, 71, 0.9);
+            background: rgba(47, 56, 71, 0.85);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
             border-bottom: 1px solid rgba(255,255,255,0.06);
-            transition: all 0.3s;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.6rem 4vw;
+            background: rgba(47, 56, 71, 0.95);
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 0.9rem;
             text-decoration: none;
         }
 
         .nav-logo img {
-            height: 48px;
+            height: 72px;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled .nav-logo img {
+            height: 44px;
             border-radius: 6px;
-        }
-
-        .nav-logo-text {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 800;
-            font-size: 1.3rem;
-            letter-spacing: 0.08em;
-            color: var(--white);
-        }
-
-        .nav-logo-text span {
-            display: block;
-            font-size: 0.6rem;
-            font-weight: 400;
-            letter-spacing: 0.2em;
-            color: var(--teal);
-            text-transform: uppercase;
-            margin-top: 1px;
         }
 
         .nav-links {
@@ -157,7 +149,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding-top: 80px;
+            padding-top: 110px;
         }
 
         .hero-bg {
@@ -974,11 +966,7 @@
     <!-- NAV -->
     <nav>
         <a href="#" class="nav-logo">
-            <img src="logo-boomsport.jpg" alt="Boom Sport Logo">
-            <div class="nav-logo-text">
-                BOOM SPORT
-                <span>Fysieke- en Mentale Trainingen</span>
-            </div>
+            <img src="logo-boomsport.jpg" alt="Boom Sport - Fysieke- en Mentale Trainingen">
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#aanbod">Aanbod</a></li>
@@ -1305,12 +1293,12 @@
         });
 
         // Nav scroll effect
+        const nav = document.querySelector('nav');
         window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
-                nav.style.padding = '0.7rem 4vw';
+                nav.classList.add('scrolled');
             } else {
-                nav.style.padding = '1rem 4vw';
+                nav.classList.remove('scrolled');
             }
         });
     </script>
