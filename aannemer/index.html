@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aannemersbedrijf P. Boom | Vakman uit Noordwijk</title>
+    <meta name="description" content="Aannemersbedrijf P. Boom - Timmerman en aannemer uit Noordwijk. Nieuwbouw, verbouw, renovatie, dakkapellen, aanbouw en meubelwerk. Vakmanschap met jarenlange ervaring.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --oak: #2C1810;
+            --timber: #5C3D2E;
+            --sand: #D4C5A9;
+            --warm-white: #F5F0E8;
+            --copper: #B87333;
+            --copper-light: #D4944A;
+            --slate: #3A3A3A;
+            --light-slate: #6B6B6B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: var(--slate);
+            background: var(--warm-white);
+            overflow-x: hidden;
+        }
+
+        /* ============ NAV ============ */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(44, 24, 16, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 0.7rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+
+        .nav-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--copper-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--copper-light);
+        }
+
+        .nav-cta {
+            background: var(--copper) !important;
+            color: #fff !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600 !important;
+            transition: background 0.3s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--copper-light) !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        .mobile-toggle span {
+            width: 28px;
+            height: 2px;
+            background: #fff;
+            transition: all 0.3s;
+        }
+
+        /* ============ HERO ============ */
+        .hero {
+            min-height: 100vh;
+            background: var(--oak);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 120px,
+                    rgba(255,255,255,0.015) 120px,
+                    rgba(255,255,255,0.015) 121px
+                ),
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 120px,
+                    rgba(255,255,255,0.015) 120px,
+                    rgba(255,255,255,0.015) 121px
+                );
+        }
+
+        /* Subtle wood grain texture */
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 2rem 4rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(184, 115, 51, 0.15);
+            border: 1px solid rgba(184, 115, 51, 0.3);
+            color: var(--copper-light);
+            padding: 0.4rem 1rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.15s forwards;
+            opacity: 0;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--copper-light);
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.7;
+            max-width: 560px;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.45s forwards;
+            opacity: 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--copper);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--copper-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(184, 115, 51, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 1.5px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.7);
+            transform: translateY(-2px);
+        }
+
+        .hero-side {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 45%;
+            background: linear-gradient(135deg, var(--timber) 0%, var(--oak) 100%);
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-icon-group {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            transform: translateX(-20px);
+        }
+
+        .hero-icon-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .hero-icon-item svg {
+            width: 32px;
+            height: 32px;
+            color: var(--copper-light);
+            opacity: 0.7;
+        }
+
+        /* ============ DIENSTEN ============ */
+        .diensten {
+            padding: 6rem 4rem;
+            background: var(--warm-white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--copper);
+            margin-bottom: 0.8rem;
+        }
+
+        .section-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--oak);
+            margin-bottom: 1rem;
+        }
+
+        .section-sub {
+            color: var(--light-slate);
+            font-size: 1.05rem;
+            max-width: 550px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .diensten-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .dienst-card {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 6px;
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dienst-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--copper);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .dienst-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(44, 24, 16, 0.08);
+        }
+
+        .dienst-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .dienst-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(184, 115, 51, 0.08);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--copper);
+        }
+
+        .dienst-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .dienst-card h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            color: var(--oak);
+            margin-bottom: 0.75rem;
+        }
+
+        .dienst-card p {
+            color: var(--light-slate);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* ============ OVER / USP ============ */
+        .over {
+            padding: 6rem 4rem;
+            background: var(--oak);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .over::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(184,115,51,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .over-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .over-text .section-label {
+            color: var(--copper-light);
+        }
+
+        .over-text .section-title {
+            color: #fff;
+            text-align: left;
+        }
+
+        .over-text p {
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .over-quote {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            color: var(--copper-light);
+            font-style: italic;
+            border-left: 3px solid var(--copper);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .usp-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .usp-item {
+            display: flex;
+            gap: 1.2rem;
+            align-items: flex-start;
+        }
+
+        .usp-icon {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            background: rgba(184, 115, 51, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--copper-light);
+        }
+
+        .usp-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .usp-item h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .usp-item p {
+            color: rgba(255,255,255,0.55) !important;
+            font-size: 0.9rem !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* ============ WERKGEBIED ============ */
+        .werkgebied {
+            padding: 5rem 4rem;
+            background: var(--warm-white);
+            text-align: center;
+        }
+
+        .werkgebied-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .werkgebied-tag {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.08);
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--slate);
+            transition: all 0.3s;
+        }
+
+        .werkgebied-tag.active {
+            background: var(--oak);
+            color: #fff;
+            border-color: var(--oak);
+        }
+
+        /* ============ CONTACT ============ */
+        .contact {
+            padding: 6rem 4rem;
+            background: #fff;
+        }
+
+        .contact-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            color: var(--oak);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info > p {
+            color: var(--light-slate);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .contact-detail-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            background: rgba(184, 115, 51, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--copper);
+        }
+
+        .contact-detail-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .contact-detail-text {
+            font-size: 0.95rem;
+            color: var(--slate);
+        }
+
+        .contact-detail-text strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.1rem;
+        }
+
+        .contact-detail-text a {
+            color: var(--copper);
+            text-decoration: none;
+        }
+
+        .contact-detail-text a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--slate);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.8rem 1rem;
+            border: 1.5px solid rgba(0,0,0,0.1);
+            border-radius: 4px;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+            background: var(--warm-white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--copper);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn-submit {
+            background: var(--copper);
+            color: #fff;
+            padding: 0.9rem 2rem;
+            font-family: 'Work Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: var(--copper-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(184, 115, 51, 0.25);
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            background: var(--oak);
+            padding: 2.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-brand {
+            font-family: 'DM Serif Display', serif;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .footer-brand span {
+            color: var(--copper-light);
+        }
+
+        .footer-copy {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
+        }
+
+        /* ============ ANIMATIONS ============ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 900px) {
+            .hero-side {
+                display: none;
+            }
+
+            .hero-content {
+                padding: 2rem;
+                max-width: 100%;
+            }
+
+            .over-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .diensten, .over, .werkgebied, .contact {
+                padding: 4rem 2rem;
+            }
+
+            footer {
+                padding: 2rem;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(44, 24, 16, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="navbar">
+        <a href="#" class="nav-logo">P. Boom <span>Aannemers</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#diensten">Diensten</a></li>
+            <li><a href="#over">Over ons</a></li>
+            <li><a href="#werkgebied">Werkgebied</a></li>
+            <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+        <div class="mobile-toggle" id="mobileToggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                Vakmanschap uit Noordwijk
+            </div>
+            <h1>Bouwen met <em>handen</em> die weten wat ze doen</h1>
+            <p class="hero-sub">Aannemersbedrijf P. Boom — timmerman en aannemer met jarenlange ervaring. Van nieuwbouw tot meubelwerk. Geen mooie praatjes, wel eerlijk werk.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    Neem contact op
+                </a>
+                <a href="#diensten" class="btn btn-outline">Bekijk diensten</a>
+            </div>
+        </div>
+        <div class="hero-side">
+            <div class="hero-icon-group">
+                <div class="hero-icon-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    Nieuwbouw
+                </div>
+                <div class="hero-icon-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                    Verbouw & Renovatie
+                </div>
+                <div class="hero-icon-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M12 6V2"/><path d="M2 10h20"/></svg>
+                    Meubelwerk op maat
+                </div>
+                <div class="hero-icon-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-4h6v4"/></svg>
+                    Dakkapellen & Aanbouw
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIENSTEN -->
+    <section class="diensten" id="diensten">
+        <div class="section-header reveal">
+            <p class="section-label">Wat wij doen</p>
+            <h2 class="section-title">Vakwerk voor elke klus</h2>
+            <p class="section-sub">Van fundering tot nok, van keuken tot dakkapel. Peter Boom levert al jaren degelijk werk in Noordwijk en omgeving.</p>
+        </div>
+        <div class="diensten-grid">
+            <div class="dienst-card reveal">
+                <div class="dienst-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
+                <h3>Nieuwbouw</h3>
+                <p>Uw droomhuis van de grond af opgebouwd. Solide constructie, eerlijke planning, en altijd persoonlijk betrokken van eerste steen tot oplevering.</p>
+            </div>
+            <div class="dienst-card reveal">
+                <div class="dienst-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h3>Verbouw & Renovatie</h3>
+                <p>Van kleine aanpassingen tot complete metamorfoses. Wij verbouwen uw woning met oog voor detail en respect voor de bestaande structuur.</p>
+            </div>
+            <div class="dienst-card reveal">
+                <div class="dienst-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-4h6v4"/></svg>
+                </div>
+                <h3>Dakkapellen & Aanbouw</h3>
+                <p>Meer ruimte en licht in uw woning. Dakkapellen en uitbouwen die naadloos aansluiten bij de bestaande architectuur.</p>
+            </div>
+            <div class="dienst-card reveal">
+                <div class="dienst-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><path d="M1 10h22"/></svg>
+                </div>
+                <h3>Meubelwerk op maat</h3>
+                <p>Kasten, keukens, tafels — vakkundig timmerwerk op maat. Gemaakt met liefde voor het materiaal en passend bij uw interieur.</p>
+            </div>
+            <div class="dienst-card reveal">
+                <div class="dienst-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Onderhoud</h3>
+                <p>Regelmatig onderhoud voorkomt grote kosten. Wij houden uw pand in topconditie met periodieke inspecties en reparaties.</p>
+            </div>
+            <div class="dienst-card reveal">
+                <div class="dienst-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                </div>
+                <h3>Advies & Begeleiding</h3>
+                <p>Niet zeker waar te beginnen? Peter denkt graag met u mee over de mogelijkheden, vergunningen en de beste aanpak voor uw project.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OVER -->
+    <section class="over" id="over">
+        <div class="over-grid">
+            <div class="over-text reveal">
+                <p class="section-label">Over Peter Boom</p>
+                <h2 class="section-title">Geen mooie praatjes,<br>wel eerlijk werk</h2>
+                <p>Peter Boom is een vakman in hart en nieren. Met jarenlange ervaring als timmerman en aannemer heeft hij honderden projecten succesvol afgerond — van complete woningen tot maatwerk meubels.</p>
+                <p>Bij Aannemersbedrijf P. Boom weet u waar u aan toe bent. Duidelijke afspraken, eerlijke prijzen, en werk waar u jaren plezier van heeft. Recht voor z'n raap, precies zoals het hoort.</p>
+                <div class="over-quote">"Goed werk levert zichzelf aan. Daar heb je geen reclame voor nodig."</div>
+            </div>
+            <div class="usp-list reveal">
+                <div class="usp-item">
+                    <div class="usp-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div>
+                        <h4>Jarenlange ervaring</h4>
+                        <p>Bewezen vakmanschap in nieuwbouw, verbouw en timmerwerk</p>
+                    </div>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div>
+                        <h4>Betrouwbaar & eerlijk</h4>
+                        <p>Afspraak is afspraak. Duidelijke offertes, geen verborgen kosten</p>
+                    </div>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <div>
+                        <h4>Persoonlijke aanpak</h4>
+                        <p>U heeft altijd direct contact met Peter zelf</p>
+                    </div>
+                </div>
+                <div class="usp-item">
+                    <div class="usp-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <div>
+                        <h4>Recht voor z'n raap</h4>
+                        <p>Eerlijk advies, ook als dat betekent: niet doen</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WERKGEBIED -->
+    <section class="werkgebied" id="werkgebied">
+        <div class="section-header reveal">
+            <p class="section-label">Werkgebied</p>
+            <h2 class="section-title">Actief in de Bollenstreek en omgeving</h2>
+            <p class="section-sub">Gevestigd in Noordwijk, werkzaam in de hele regio.</p>
+        </div>
+        <div class="werkgebied-tags reveal">
+            <span class="werkgebied-tag active">Noordwijk</span>
+            <span class="werkgebied-tag">Noordwijkerhout</span>
+            <span class="werkgebied-tag">Lisse</span>
+            <span class="werkgebied-tag">Sassenheim</span>
+            <span class="werkgebied-tag">Hillegom</span>
+            <span class="werkgebied-tag">Katwijk</span>
+            <span class="werkgebied-tag">Voorhout</span>
+            <span class="werkgebied-tag">Warmond</span>
+            <span class="werkgebied-tag">Oegstgeest</span>
+            <span class="werkgebied-tag">Leiden</span>
+            <span class="werkgebied-tag">Bollenstreek</span>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="section-header reveal">
+            <p class="section-label">Contact</p>
+            <h2 class="section-title">Laten we kennismaken</h2>
+            <p class="section-sub">Bouwplannen? Verbouwing in gedachten? Of gewoon even sparren over de mogelijkheden? Neem gerust contact op.</p>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-info reveal">
+                <h3>Aannemersbedrijf P. Boom</h3>
+                <p>Gevestigd in Noordwijk. Peter staat altijd open voor een vrijblijvend gesprek over uw bouwplannen.</p>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div class="contact-detail-text">
+                        <strong>Locatie</strong>
+                        Noordwijk
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    </div>
+                    <div class="contact-detail-text">
+                        <strong>Telefoon</strong>
+                        <a href="tel:0612345678">06 - 1234 5678</a>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <div class="contact-detail-text">
+                        <strong>E-mail</strong>
+                        <a href="mailto:info@aannemersbedrijfpboom.nl">info@aannemersbedrijfpboom.nl</a>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    </div>
+                    <div class="contact-detail-text">
+                        <strong>Website</strong>
+                        <a href="https://aannemersbedrijfpboom.nl">aannemersbedrijfpboom.nl</a>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="naam">Naam</label>
+                        <input type="text" id="naam" name="naam" placeholder="Uw naam" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefoon">Telefoon</label>
+                        <input type="tel" id="telefoon" name="telefoon" placeholder="06 - ...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="uw@email.nl" required>
+                </div>
+                <div class="form-group">
+                    <label for="bericht">Uw bericht</label>
+                    <textarea id="bericht" name="bericht" placeholder="Vertel kort over uw project of vraag..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Verstuur bericht</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">P. Boom <span>Aannemers</span></div>
+        <div class="footer-copy">&copy; 2026 Aannemersbedrijf P. Boom — Noordwijk</div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // Scroll reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, i * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // Form handler (placeholder)
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('.btn-submit');
+            btn.textContent = 'Verzonden! ✓';
+            btn.style.background = '#2C6B3F';
+            setTimeout(() => {
+                btn.textContent = 'Verstuur bericht';
+                btn.style.background = '';
+                e.target.reset();
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
