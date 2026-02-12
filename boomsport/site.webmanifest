@@ -1,0 +1,20 @@
+{
+  "name": "Boom Sport",
+  "short_name": "Boom Sport",
+  "description": "Fysieke- en Mentale Trainingen in Noordwijk",
+  "icons": [
+    {
+      "src": "favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#3DBCB0",
+  "background_color": "#2f3847",
+  "display": "standalone"
+}
