@@ -78,18 +78,41 @@
         .nav-logo {
             display: flex;
             align-items: center;
+            gap: 1rem;
             text-decoration: none;
         }
 
-        .nav-logo img {
-            height: 72px;
+        .nav-logo-icon {
+            width: 80px;
+            height: 65px;
+            overflow: hidden;
             border-radius: 8px;
             transition: all 0.4s ease;
         }
 
-        nav.scrolled .nav-logo img {
-            height: 44px;
+        .nav-logo-icon img {
+            width: 100%;
+            height: auto;
+            transform: translateY(-5%);
+        }
+
+        nav.scrolled .nav-logo-icon {
+            width: 50px;
+            height: 40px;
             border-radius: 6px;
+        }
+
+        .nav-logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            letter-spacing: 0.05em;
+            color: var(--white);
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled .nav-logo-text {
+            font-size: 1.3rem;
         }
 
         .nav-links {
@@ -929,6 +952,24 @@
         @media (max-width: 768px) {
             nav { padding: 0.8rem 1.5rem; }
 
+            .nav-logo-icon {
+                width: 50px;
+                height: 40px;
+            }
+
+            .nav-logo-text {
+                font-size: 1.3rem;
+            }
+
+            nav.scrolled .nav-logo-icon {
+                width: 40px;
+                height: 32px;
+            }
+
+            nav.scrolled .nav-logo-text {
+                font-size: 1.1rem;
+            }
+
             .nav-links {
                 display: none;
                 position: fixed;
@@ -966,7 +1007,10 @@
     <!-- NAV -->
     <nav>
         <a href="#" class="nav-logo">
-            <img src="logo-boomsport.jpg" alt="Boom Sport - Fysieke- en Mentale Trainingen">
+            <div class="nav-logo-icon">
+                <img src="logo-boomsport.jpg" alt="Boom Sport">
+            </div>
+            <span class="nav-logo-text">Boom Sport</span>
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#aanbod">Aanbod</a></li>
