@@ -1325,6 +1325,7 @@
                     <option>Gratis Kennismaking</option>
                 </select>
                 <textarea name="bericht" placeholder="Vertel iets over je doelen of stel een vraag..."></textarea>
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
                 <button type="submit" class="form-submit">Verstuur Bericht →</button>
             </form>
         </div>
@@ -1405,33 +1406,38 @@
                 nav.classList.remove('scrolled');
             }
         });
-        // Contact form
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        // Contact form — Formbridge
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const form = this;
-            const data = new FormData(form);
-            const naam = data.get('naam');
-            const email = data.get('email');
-            const telefoon = data.get('telefoon') || '-';
-            const interesse = data.get('interesse');
-            const bericht = data.get('bericht') || '-';
+            const btn = form.querySelector('.form-submit');
+            btn.disabled = true;
+            btn.textContent = 'Versturen...';
 
-            const subject = encodeURIComponent('Website aanvraag: ' + interesse);
-            const body = encodeURIComponent(
-                'Naam: ' + naam + '\n' +
-                'E-mail: ' + email + '\n' +
-                'Telefoon: ' + telefoon + '\n' +
-                'Interesse: ' + interesse + '\n\n' +
-                'Bericht:\n' + bericht
-            );
+            const data = Object.fromEntries(new FormData(form));
+            data._ts = Date.now();
 
-            window.location.href = 'mailto:info@peterboomsport.nl?subject=' + subject + '&body=' + body;
+            try {
+                const res = await fetch('https://forms.perceptum.nl/api/v1/s/f_12b2c5badffa', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
 
-            form.innerHTML = '<div style="text-align:center; padding:3rem;">' +
-                '<div style="font-size:2.5rem; margin-bottom:1rem;">✅</div>' +
-                '<h3 style="font-family:Outfit; margin-bottom:0.5rem;">Je mailprogramma opent zo!</h3>' +
-                '<p style="color:var(--text-muted);">Verstuur het bericht vanuit je mailprogramma. Of bel direct: <a href="tel:0651193050" style="color:var(--teal);">06 – 511 930 50</a></p>' +
-                '</div>';
+                if (res.ok) {
+                    form.innerHTML = '<div style="text-align:center; padding:3rem;">' +
+                        '<div style="font-size:2.5rem; margin-bottom:1rem;">✅</div>' +
+                        '<h3 style="font-family:Outfit; margin-bottom:0.5rem;">Bericht verstuurd!</h3>' +
+                        '<p style="color:var(--text-muted);">We nemen zo snel mogelijk contact met je op.</p>' +
+                        '</div>';
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (err) {
+                btn.disabled = false;
+                btn.textContent = 'Verstuur Bericht →';
+                alert('Er ging iets mis. Probeer het nog eens of bel 06 – 511 930 50.');
+            }
         });
     </script>
 </body>
