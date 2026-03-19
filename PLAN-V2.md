@@ -33,6 +33,24 @@ Wie zich hierdoor aangesproken voelt, is precies de klant die Peter zoekt. Ze ki
 
 **De toon:** zelfverzekerd, recht voor z'n raap, maar warm. Nooit hautain. Peter stelt hoge eisen omdat hij gelooft dat mensen meer aankunnen dan ze denken. Niet omdat hij zichzelf beter vindt.
 
+### Waar het echt om gaat
+
+Er zit iets onder die "niet voor iedereen"-houding dat belangrijker is dan marketing. Het is Peters overtuiging over mensen.
+
+Bij vv Noordwijk trainde Peter jeugdelftallen. Waar andere trainers hun aandacht richten op de spelers die het toch al goed doen, deed Peter het tegenovergestelde. Hij investeerde juist in de spelers waar anderen al op hadden opgegeven. De kinderen van wie gezegd werd: die is niet goed genoeg.
+
+Niet door het ze makkelijk te maken. Door juist veel van ze te vragen. Door in ze te geloven, hardop, consequent, ook als ze het zelf niet meer deden. En die spelers groeiden. Niet omdat ze ineens talent bleken te hebben, maar omdat iemand ze liet zien dat ze beter konden worden door eraan te werken.
+
+Dat is de kern van alles wat Peter doet. Het gaat niet om boksen, niet om conditie, niet om mentale training als apart vakje. Het gaat om één inzicht dat je leven verandert als het eenmaal landt:
+
+**Je hebt zelf invloed op hoe het gaat.**
+
+Niet op alles. Maar op veel meer dan je denkt. Je kunt beter worden in wat dan ook, als je bereid bent om er gericht aan te werken. Dat is confronterend — want het betekent dat je je niet meer kunt verstoppen achter "ik kan dat niet" of "zo ben ik nu eenmaal." Maar het is ook het krachtigste dat je iemand kunt leren. Zeker aan een kind. Zeker aan iemand die vastloopt.
+
+Dit is geen marketingverhaal. Dit is waar de hele site op gebouwd wordt. Elke pagina, elke zin moet dit uitademen — zonder het steeds te benoemen. De filosofie-pagina legt het uit met wetenschap. De trainingspagina's laten het zien in de praktijk. De Over Peter-pagina vertelt het als verhaal. Maar de boodschap is overal dezelfde:
+
+> Je kunt meer dan je denkt. Maar je moet het wel zelf doen. En het gaat pijn doen. En dat is precies waarom het werkt.
+
 ---
 
 ## Opbouw van de site
