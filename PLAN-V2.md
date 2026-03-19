@@ -300,7 +300,7 @@ Gewoon HTML, CSS en JavaScript. Tien pagina's, geen framework nodig. Snel, simpe
 | Wat | Waarom | Waar staan we |
 |-----|--------|---------------|
 | Foto's van Peter en trainingen | Zonder foto's blijft het een site met tekst en een logo | ✉️ Gevraagd |
-| Klopt het adres nog? (Irisplein 7) | Voor de contactpagina en een kaartje | ✉️ Gevraagd |
+| Adres sportschool | Slijperij 7, 2211 SK Noordwijkerhout | ✅ Bevestigd |
 | Twee of drie citaten van klanten | Niets overtuigt zo goed als iemand anders die zegt dat het werkt | ✉️ Gevraagd |
 | Mogen er prijzen op de site? | Scheelt drempelvrees bij bezoekers | ✉️ Gevraagd |
 | Peter, tien minuten praten over zijn aanpak | Een voicememo of kort gesprek — geeft ons zijn woorden, niet de onze | Nog te plannen |

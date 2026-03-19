@@ -5,10 +5,7 @@
 - [ ] Agree on pricing — send proposal or have the conversation
 - [ ] Get written confirmation / signed agreement
 - [ ] Invoice or set up recurring billing
-- [ ] Move domain (same flow as wvdberg: TransIP → Porkbun)
-- [ ] Set up DNS records via Porkbun API
 - [ ] **Keep MX records untouched**
-- [ ] Verify domain resolves correctly
 - [ ] Verify email still works
 
 ### Notes
